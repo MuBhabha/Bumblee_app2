@@ -1,0 +1,104 @@
+﻿@model ContactUsVM
+<style>
+    .text-danger{
+        color:red;
+    }
+</style>
+<section class="page-title bg-1">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-12">
+                <div class="block has-text-centered">
+                    <span class="text-white">Contact Us</span>
+                    <h1 class="is-capitalize text-lg">Get in Touch</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <div class="columns is-justify-content-center is-multiline">
+            <div class="column is-12-desktop is-12-tablet">
+                <div class="contact-content">
+                    <h2 class="mb-5">We’d love to hear from you! <br>Give us call, send us a message?</h2>
+                    <ul class="address-block list-unstyled">
+                        <li>
+                            <h6 class="mb-2">Address</h6>
+                            12 Radar Dr, Durban North, Durban. 4051
+                        </li>
+                        <li>
+                            <h6 class="mb-2">email us</h6>
+                            bumblebeefoundation.org@gmail.com
+                        </li>
+                        <li>
+                            <h6 class="mb-2">Phone Number</h6>
+                            +88 01672 506 744
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- contact form start -->
+<section class="contact-wrap section-bottom">
+    <div class="container">
+        <div class="columns is-multiline">
+            <div class="column is-12">
+                <form class="contact__form" method="post" action="@Url.Action("ContactUs")">
+                    <span class="text-color">Send a message</span>
+                    <h3 class="text-md mb-5">Contact Form</h3>
+                    <!-- form message -->
+                    <div class="columns is-gapless">
+                        <div class="column is-12">
+                            @if (ViewBag.msg != null)
+                            {
+                                <div class="message is-primary contact__msg">
+                                    <div class="message-body">
+                                        @ViewBag.msg
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <!-- end message -->
+                    <div class="columns is-multiline">
+                        <div class="column is-6-desktop is-6-tablet">
+                            <label>Your Name *</label>
+                            <input asp-for="Name" type="text" class="input">
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="column is-6-desktop is-6-tablet">
+                            <label>Your Email *</label>
+                            <input asp-for="Email" type="email" class="input">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="column is-6-desktop is-6-tablet">
+                            <label>Your Subject *</label>
+                            <input asp-for="Subject" type="text" class="input">
+                            <span asp-validation-for="Subject" class="text-danger"></span>
+                        </div>
+                        <div class="column is-6-desktop is-6-tablet">
+                            <label>Your Phone Number *</label>
+                            <input asp-for="Phone" type="number" class="input" min="0">
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+                        <div class="column is-12">
+                            <label>Your Message *</label>
+                            <textarea asp-for="Message" class="input" rows="6"></textarea>
+                            <span asp-validation-for="Message" class="text-danger"></span>
+                        </div>
+                        <div class="column is-12">
+                            <input class="btn btn-main is-rounded" name="submit" type="submit"></input>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

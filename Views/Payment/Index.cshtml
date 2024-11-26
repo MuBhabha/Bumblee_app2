@@ -1,0 +1,127 @@
+﻿<section class="page-title bg-1">
+	<div class="container">
+		<div class="columns">
+			<div class="column is-12">
+				<div class="block has-text-centered">
+					<span class="text-white">Donation confirmation</span>
+					<h1 class="is-capitalize text-lg">Donation details</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section donation">
+	<div class="container">
+		<div class="columns is-multiline is-desktop">
+			<div class="column is-8-desktop">
+				<div class="donation-wrap">
+					<h2 class="text-md mb-5">I want to support you</h2>
+					<p class="mb-6 is-size-5">Soluta odit consequuntur adipisci consectetur culpa sequi exercitationem molestias dolores saepe, aut, ratione quam recusandae nulla. Beatae eius, voluptas.</p>
+
+					<form action="@Url.Action("CreatePayment")" method="post" class="donation-form">
+						<fieldset>
+							<div class="columns is-multiline">
+								<label class="column is-3 has-text-weight-bold h3">Donation</label>
+								@if (User.Identity.IsAuthenticated)
+								{
+									<input type="hidden" name="email" value="@User.Identity.Name" />
+								}
+								
+								<div class="column is-9">
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="amount" id="gridRadios1" value="30" checked>
+										<label class="form-check-label" for="gridRadios1">
+											30 USD
+										</label>
+									</div>
+
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="amount" id="gridRadios2"
+											   value="150">
+										<label class="form-check-label" for="gridRadios2">
+											150 USD
+										</label>
+									</div>
+
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="amount" id="gridRadios3"
+											   value="300">
+										<label class="form-check-label" for="gridRadios3">
+											300 USD
+										</label>
+									</div>
+
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="amount" id="gridRadios4"
+											   value="500">
+										<label class="form-check-label" for="gridRadios4">
+											500 USD
+										</label>
+									</div>
+
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="amount" id="gridRadios5"
+											   value="1000">
+										<label class="form-check-label" for="gridRadios5">
+											1000 USD
+										</label>
+									</div>
+
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="amount" id="gridRadios6"
+											   value="1500">
+										<label class="form-check-label" for="gridRadios6">
+											1500 USD
+										</label>
+									</div>
+									<div class="columns is-align-items-center">
+										<label class="column has-text-weight-bold is-4">Other amount: </label>
+										<div class="column is-8">
+											<input type="number" class="input" name="custom_amount" id="inputamount" placeholder="25000">
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+						</fieldset>
+
+
+						<div class="columns is-gapless is-multiline mt-4">
+							<div class="column sm-10">
+								<input type="submit" value="Donate Via PayPal" class="btn btn-main-2 is-rounded"/>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="column is-4-desktop">
+				<div class="offline-donation">
+					<h4 class="mb-5">
+						In order to make an offline donation we ask that you please follow these instructions:
+					</h4>
+
+					<ul class="list-unstyled">
+						<li>1. Make a check payable to <span>"Bumblebee Foundation"</span></li>
+						<li>
+							2. On the memo line of the check, please indicate that the donation is for <span>"Bumblebee Foundation"</span>
+						</li>
+						<li>
+							3. Please mail your check to:
+
+							<address>
+								12 Radar Dr, Durban North, Durban. 4051
+							</address>
+						</li>
+						<li>4. Email us in detials : <span>bumblebeefoundation.org@gmail.com</span></li>
+						<li>5. Contact us at Phone: <span>Mob: +966 5130088239</span></li>
+					</ul>
+
+					<p>All contributions will be gratefully acknowledged and are tax deductible.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,87 @@
+﻿@model RegisterVM
+@{
+    Layout = "_AuthLayout";
+}
+<div class="row">
+    <div class="col-lg-10 offset-lg-1">
+        <h3 class="mb-3">Login Now</h3>
+        <div class="bg-white shadow rounded">
+            <div class="row">
+                <div class="col-md-7 pe-0">
+                    <div class="form-left h-100 py-5 px-5">
+                        <form action="@Url.Action("Register")" method="post" class="row g-4">
+                            <div class="col-12">
+                                @Html.ValidationSummary("errors", new { @class = "text-danger" })
+                                <label>First Name<span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
+                                    <input type="text" name="FirstName" asp-for=FirstName
+                                           class="form-control"
+                                           placeholder="Enter your first name" />
+                                </div>
+                                @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-12">
+                                <label>Last Name<span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
+                                    <input type="text" name="LastName" asp-for=LastName
+                                           class="form-control"
+                                           placeholder="Enter your last name" />
+                                </div>
+                                @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-12">
+                                <label>Email<span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <div class="input-group-text"><i class="bi bi-envelope"></i></div>
+                                    <input type="text" name="Email" asp-for=Email
+                                           class="form-control"
+                                           placeholder="Enter your email" />
+                                </div>
+                                @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="col-12">
+                                <label>Password<span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
+                                    <input type="password" name="Password" asp-for=Password
+                                           class="form-control"
+                                           placeholder="Enter your password" />
+                                </div>
+                                @Html.ValidationMessageFor(x => x.Password, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="col-12">
+                                <label>Confirm Password<span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
+                                    <input type="password" name="ConfirmPassword" asp-for=ConfirmPassword
+                                           class="form-control"
+                                           placeholder="Enter confirm password" />
+                                </div>
+                                @Html.ValidationMessageFor(x => x.ConfirmPassword, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="col-sm-12">
+                                Already have account? <a asp-action="Login" class="float-end text-primary">Login Now </a>
+                            </div>
+
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary px-4 float-end mt-4">Create account</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-5 ps-0 d-none d-md-block">
+                    <div class="form-right h-100 bg-primary text-white text-center pt-5">
+                        <i class="bi bi-bootstrap"></i>
+                        <h2 class="fs-1">Welcome Back!!!</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="text-end text-secondary mt-3">Bumblebee Foundation</p>
+    </div>
+</div>

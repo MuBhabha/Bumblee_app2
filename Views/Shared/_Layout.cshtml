@@ -1,0 +1,152 @@
+﻿<!doctype html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Bumblebee, Donation Website, Charity Website">
+
+	<title>Bumblebee</title>
+
+	<!-- bootstrap.min css -->
+	<link rel="stylesheet" href="~/assets/plugins/bulma/bulma.min.css">
+	<!-- Icon Font Css -->
+	<link rel="stylesheet" href="~/assets/plugins/themify/css/themify-icons.css">
+	<link rel="stylesheet" href="~/assets/plugins/icofont/icofont.css">
+	<link rel="stylesheet" href="~/assets/plugins/magnific-popup/dist/magnific-popup.css">
+	<!-- Owl Carousel CSS -->
+	<link rel="stylesheet" href="~/assets/plugins/slick-carousel/slick/slick.css">
+	<link rel="stylesheet" href="~/assets/plugins/slick-carousel/slick/slick-theme.css">
+	<link rel="stylesheet" href="~/assets/plugins/modal-video/modal-video.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+	<!-- Main Stylesheet -->
+	<link rel="stylesheet" href="~/assets/css/style.css">
+
+</head>
+
+<body>
+
+	<!-- Header Start -->
+	<header class="navigation">
+		<div class="header-top ">
+			<div class="container">
+				<div class="columns is-gapless is-justify-content-space-between is-align-items-center">
+					<div class="column is-6-desktop is-4-tablet has-text-left-desktop has-text-centered-mobile">
+						<div class="header-top-info">
+							<a href="tel:+23-345-67890"><i class="icofont-phone mr-2"></i><span>+23-345-67890</span></a>
+							<a href="mailto:support@gmail.com"><i class="icofont-email mr-2"></i><span>support@gmail.com</span></a>
+						</div>
+					</div>
+					<div class="column is-6-desktop is-8-tablet">
+						<div class="header-top-right has-text-right-tablet has-text-centered-mobile">
+							<a href="https://www.facebook.com/themefisher" target="_blank"><i class="icofont-facebook"></i></a>
+							<a href="https://twitter.com/themefisher" target="_blank"><i class="icofont-twitter"></i></a>
+							<a href="https://github.com/themefisher/" target="_blank"><i class="icofont-github"></i></a>
+							<a href="#" target="_blank"><i class="icofont-pinterest"></i></a>
+							<a href="#" target="_blank"><i class="icofont-linkedin"></i></a>
+							<a asp-action="Index" asp-controller="payment" class="top-btn">Donate Now</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav id="navbar" class="navbar main-nav">
+			<div class="container">
+				<div class="navbar-brand">
+					<a class="navbar-item" asp-action="index" asp-controller="home">
+						<h3><i class="bi bi-bootstrap"></i> Bumblebee</h3>
+					</a>
+					<button role="button" class="navbar-burger burger" data-hidden="true" data-target="navigation">
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+					</button>
+				</div>
+
+				<div class="navbar-menu mr-0" id="navigation">
+					<ul class="navbar-end">
+						<li class="navbar-item">
+							<a class="navbar-link" asp-action="index" asp-controller="home">Home</a>
+						</li>
+
+						<li class="navbar-item">
+							<a class="navbar-link" asp-action="contactus" asp-controller="home">Contact Us</a>
+						</li>
+
+						<li class="navbar-item">
+							<a class="navbar-link" asp-action="faqs" asp-controller="home">FAQ's</a>
+						</li>
+
+						<li class="navbar-item">
+							<a class="navbar-link" asp-action="Create" asp-controller="Funding">Funding Request</a>
+						</li>
+
+						@if (User.Identity != null && User.Identity.IsAuthenticated)
+						{
+							<li class="navbar-item">
+								<a class="navbar-link">@User.Identity.Name</a>
+							</li>
+						}
+						else
+						{
+							<li class="navbar-item">
+								<a class="navbar-link" asp-action="Login" asp-controller="Account">Login/Register</a>
+							</li>
+						}
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- Header Close -->
+	@RenderBody()
+
+	<!-- footer Start -->
+	<footer class="footer section">
+		<div class="container">
+
+			<div class="footer-btm py-5">
+				<div class="columns is-justify-content-center">
+					<div class="column is-12">
+						<div class="copyright has-text-centered">
+							<small>&copy; Copyright Reserved to Bumblebee.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!--
+	Essential Scripts
+	=====================================-->
+	<!-- Main jQuery -->
+	<script src="~/assets/plugins/jquery/jquery.js"></script>
+	<script src="~/assets/js/contact.js"></script>
+	<!--  Magnific Popup-->
+	<script src="~/assets/plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+	<!-- Slick Slider -->
+	<script src="~/assets/plugins/slick-carousel/slick/slick.min.js"></script>
+	<!-- Counterup -->
+	<script src="~/assets/plugins/counterup/jquery.waypoints.min.js"></script>
+	<script src="~/assets/plugins/counterup/jquery.counterup.min.js"></script>
+
+	<script src="~/assets/plugins/modal-video/jquery-modal-video.min.js"></script>
+
+	<!-- Google Map -->
+	<script src="~/assets/plugins/google-map/map.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>
+
+	<script src="~/assets/js/script.js"></script>
+
+	@RenderSection("Scripts", required: false)
+</body>
+</html>
